@@ -56,6 +56,7 @@ group :development do
 end
 
 group :test do
+  gem "approvals"
   gem "rspec-rails", "~> 6.0.0"
 end
 
