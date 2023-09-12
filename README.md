@@ -1,24 +1,18 @@
-# README
+# Approov
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails app plays with approval testing using the
+[Approvals](https://github.com/approvals/ApprovalTests.Ruby) gem.
 
-Things you may want to cover:
+## Dependencies
 
-* Ruby version
+* Ruby 3.1.3
+* SQLite3
 
-* System dependencies
+## Testing with the Approvals gem
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run tests with `bundle exec rspec spec`. To view approvals change the HTML in
+`app/views/pages/index.html.erb` and run the pages view spec. Once it fails,
+the fixture in `spec/fixtures/approvals/pagesindex/renders_html.approved.txt`
+will be considered contested and the Approvals gem will generate a new
+file at `spec/fixtures/approvals/pagesindex/renders_html.received.txt`. You can
+then view and manage the approval with `bundle exec approvals verify -a`.
